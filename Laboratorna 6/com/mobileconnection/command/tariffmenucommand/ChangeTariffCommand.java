@@ -17,15 +17,8 @@ public class ChangeTariffCommand implements Command {
     public void execute() {
         MobileCompany company = getCurrentCompany();
         Tariff tariff = getCurrentTariff();
-        int indexOfTariff = Arrays.asList(company.getTariffs()).indexOf(tariff);
-        int choice;
-        // використання рефлексії
-        Field[] fields1 = tariff.getClass().getSuperclass().getDeclaredFields();
-        Field[] fields2 = tariff.getClass().getDeclaredFields();
-        // об'єднання полів
-        Field[] fields = new Field[fields1.length + fields2.length];
-        System.arraycopy(fields1, 0, fields, 0, fields1.length);
-        System.arraycopy(fields2, 0, fields, fields1.length, fields2.length);
+        int indexOfTariff = Arrays.asList(company.getTariffs()).indexOf(tariff), choice;
+        Field[] fields = getFields(tariff);
 
         for (Field field : fields)
             field.setAccessible(true);
@@ -51,21 +44,7 @@ public class ChangeTariffCommand implements Command {
             if (choice == 0)
                 break;
             if (choice > 0 && choice <= fields.length) {
-                System.out.print("Введіть нове значення поля \"" + fields[choice - 1].getName() + "\": ");
-                try {
-                    if (fields[choice - 1].getType() == int.class)
-                        fields[choice - 1].set(tariff, IN.nextInt());
-                    else if (fields[choice - 1].getType() == double.class)
-                        fields[choice - 1].set(tariff, IN.nextDouble());
-
-                    IN.nextLine();
-
-                    if (fields[choice - 1].getType() == String.class)
-                        fields[choice - 1].set(tariff, IN.nextLine());
-                } catch (Exception e) {
-                    IN.nextLine();
-                    System.out.println("Помилка введення даних!");
-                }
+                setField(choice, fields, tariff);
                 company.setTariff(tariff, indexOfTariff);
                 setCurrentCompany(company);
                 setCurrentTariff(company.getTariffs()[indexOfTariff]);
@@ -75,6 +54,34 @@ public class ChangeTariffCommand implements Command {
         for (Field field : fields)
             field.setAccessible(false);
         setCommands(TariffMenu.createCommandArray());
+    }
+
+    private static Field[] getFields(Tariff tariff) {
+        Field[] fields1 = tariff.getClass().getSuperclass().getDeclaredFields();
+        Field[] fields2 = tariff.getClass().getDeclaredFields();
+        Field[] fields = new Field[fields1.length + fields2.length];
+        System.arraycopy(fields1, 0, fields, 0, fields1.length);
+        System.arraycopy(fields2, 0, fields, fields1.length, fields2.length);
+        for (Field field : fields)
+            field.setAccessible(true);
+        return fields;
+    }
+    private static void setField(int choice, Field[] fields, Tariff tariff) {
+        System.out.print("Введіть нове значення поля \"" + fields[choice - 1].getName() + "\": ");
+        try {
+            if (fields[choice - 1].getType() == int.class)
+                fields[choice - 1].set(tariff, IN.nextInt());
+            else if (fields[choice - 1].getType() == double.class)
+                fields[choice - 1].set(tariff, IN.nextDouble());
+
+            IN.nextLine();
+
+            if (fields[choice - 1].getType() == String.class)
+                fields[choice - 1].set(tariff, IN.nextLine());
+        } catch (Exception e) {
+            IN.nextLine();
+            System.out.println("Помилка введення даних!");
+        }
     }
 
     public String toString() {
