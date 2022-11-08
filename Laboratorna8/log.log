@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-08T15:08:47.372836800Z</date>
+  <millis>1667920127372</millis>
+  <nanos>836800</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>SEVERE</level>
+  <class>com.mobileconnection.service.CompanyService</class>
+  <method>getCompanyArray</method>
+  <thread>1</thread>
+  <message>Помилка читання файлу Lifecell.dat</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-11-08T15:09:32.762491800Z</date>
+  <millis>1667920172762</millis>
+  <nanos>491800</nanos>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>com.mobileconnection.command.mainmenucommand.AddCompanyCommand</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Додано компанію "Vodafone"</message>
+</record>
+<record>
+  <date>2022-11-08T15:09:48.286358100Z</date>
+  <millis>1667920188286</millis>
+  <nanos>358100</nanos>
+  <sequence>1</sequence>
+  <logger>global</logger>
+  <level>SEVERE</level>
+  <class>com.mobileconnection.tariff.Tariff</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Користувач ввів неправильний тип даних</message>
+</record>
+<record>
+  <date>2022-11-08T15:10:36.799871700Z</date>
+  <millis>1667920236799</millis>
+  <nanos>871700</nanos>
+  <sequence>2</sequence>
+  <logger>global</logger>
+  <level>INFO</level>
+  <class>com.mobileconnection.command.companymenucommand.AddTariffCommand</class>
+  <method>execute</method>
+  <thread>1</thread>
+  <message>Додано тариф "Твій Тариф"у компанію "Vodafone"!</message>
+</record>
+</log>
