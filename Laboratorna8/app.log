@@ -1,0 +1,48 @@
+19:03:39.115 [main] INFO  com.mobileconnection.Main            - Початок роботи програми
+19:03:39.156 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:03:43.548 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Вивести список мобільних компаній
+19:03:43.551 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:03:44.991 [main] INFO  c.m.c.m.ChooseCompanyCommand         - Вибрана компанія: Київстар
+19:03:46.612 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Створити тариф
+19:03:51.500 [main] ERROR com.mobileconnection.tariff.Tariff   - Користувач ввів неправильний тип даних
+java.lang.NumberFormatException: For input string: "уцмацук"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at com.mobileconnection.tariff.Tariff.<init>(Tariff.java:29)
+	at com.mobileconnection.tariff.TariffPackage.<init>(TariffPackage.java:11)
+	at com.mobileconnection.command.companymenucommand.AddTariffCommand.execute(AddTariffCommand.java:39)
+	at com.mobileconnection.menu.Menu.menuLoop(Menu.java:33)
+	at com.mobileconnection.menu.CompanyMenu.execute(CompanyMenu.java:12)
+	at com.mobileconnection.command.mainmenucommand.ChooseCompanyCommand.execute(ChooseCompanyCommand.java:50)
+	at com.mobileconnection.menu.Menu.menuLoop(Menu.java:33)
+	at com.mobileconnection.menu.MainMenu.execute(MainMenu.java:12)
+	at com.mobileconnection.Main.main(Main.java:17)
+19:04:07.262 [main] INFO  c.m.service.CompanyService           - Компанія Київстар успішно додана
+19:04:07.263 [main] INFO  c.m.service.CompanyService           - Компанія Київстар успішно перезаписана
+19:04:07.263 [main] INFO  c.m.c.c.AddTariffCommand             - Додано пакет даних "Твоя хата"у компанію "Київстар"!
+19:04:10.545 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Сортувати тарифи за абонплатою
+19:04:10.553 [main] INFO  c.m.service.CompanyService           - Компанія Київстар успішно додана
+19:04:10.553 [main] INFO  c.m.service.CompanyService           - Компанія Київстар успішно перезаписана
+19:04:10.553 [main] INFO  c.m.c.c.SortTariffCommand            - Тарифи компанії "Київстар" посортовано
+19:04:16.036 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Вивести список тарифів
+19:04:18.743 [main] INFO  c.m.c.c.ChooseTariffCommand          - Вибрано тариф: Мушу
+19:04:20.175 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Видалити тариф
+19:04:20.176 [main] INFO  c.m.c.t.DeleteTariffCommand          - Тариф "Мушу" видалений із компанії "Київстар"
+19:04:20.215 [main] INFO  c.m.service.CompanyService           - Компанія Київстар успішно додана
+19:04:20.216 [main] INFO  c.m.service.CompanyService           - Компанія Київстар успішно перезаписана
+19:05:40.595 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:05:41.915 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:05:43.328 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Створити мобільну компанію
+19:05:50.630 [main] INFO  c.m.service.CompanyService           - Компанія Vodafone успішно додана
+19:05:50.633 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:05:50.634 [main] INFO  c.m.c.m.AddCompanyCommand            - Додано компанію "Vodafone"
+19:05:52.028 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Вивести список мобільних компаній
+19:05:52.032 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:05:53.584 [main] INFO  c.m.c.m.ChooseCompanyCommand         - Вибрана компанія: Vodafone
+19:05:55.551 [main] INFO  com.mobileconnection.menu.Menu       - Обрано команду: Видалити мобільну компанію
+19:05:56.831 [main] INFO  c.m.c.c.DeleteCompanyCommand         - Видалено компанію "Vodafone"
+19:05:56.833 [main] INFO  c.m.service.CompanyService           - Файл Vodafone.dat успішно видалено!
+19:05:56.835 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:05:56.837 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
+19:05:58.551 [main] INFO  c.m.service.CompanyService           - Зчитано компанії з файлів
